@@ -1,5 +1,22 @@
 import React, { Component } from 'react';
 
+const App = () => {
+  return(
+  <div>
+    <Cat/>
+    <Cat />
+    <Cat  />
+    </div>
+  )
+}
+
+const Cat = () =>{
+  return <div>Meow!</div>
+};
+
+
+
+
 //function App() {
   //return (
    //<div><h1>Hello World!</h1></div>
@@ -20,16 +37,16 @@ import React, { Component } from 'react';
 //   }
 // }
 
-class App extends Component{
-  render(){
-    return(
-      <div>
-      <label htmlFor="bar">bar</label>
-      <input type="text" onChange={()=>{console.log("clicked");}} />
-      </div>
-    )
-  }
-}
+// class App extends Component{
+//   render(){
+//     return(
+//       <div>
+//       <label htmlFor="bar">bar</label>
+//       <input type="text" onChange={()=>{console.log("clicked");}} />
+//       </div>
+//     )
+//   }
+// }
 
 // class App extends Component{
 //   render(){
