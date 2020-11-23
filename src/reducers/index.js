@@ -5,4 +5,4 @@ import count from './count';
 
 // export defaiul combineReducers({foo,bar,bax})
 
-export default combineReducers({count})
+export default combineReducers({ count })

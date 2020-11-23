@@ -6,6 +6,7 @@ import reducer from './reducers'
 
 import './index.css';
 import App from './components/App';
+// import App from './App'
 // import App2 from './components/App';
 
 import * as serviceWorker from './serviceWorker';
@@ -13,17 +14,16 @@ import * as serviceWorker from './serviceWorker';
 //全てのstateはこのstoreに集約されている。
 const store = createStore(reducer)
 
-console.log(store);
+// console.log(store);
 
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/* //providerコンポーネントでラップした後、storeにあるstateを渡す。 */}
+
+    /* //providerコンポーネントでラップした後、storeにあるstateを渡す。 */
     <Provider store={store}>
     <App />
-    </Provider>
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById('root')
 );
 

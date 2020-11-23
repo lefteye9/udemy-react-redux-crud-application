@@ -10,7 +10,7 @@ class App extends Component {
 
   return(
     <React.Fragment>
-    <div>value: {props.value}</div>
+    <div>value:{props.value}</div>
     <buttorn onClick={props.increment}>+1</buttorn>
     <buttorn onClick={props.decrement}>-1</buttorn>
     </React.Fragment>
@@ -18,8 +18,8 @@ class App extends Component {
   }
 }
 
-//stateを引数に変化した値を返す。
-const mapStateToProps = state =>({value: state.count.value})
+//stateを引数に変化した値を返す。countはexport default combineReducers{(count)}で設定
+const mapStateToProps = state =>({value:state.count.value})
 
 //dipatch（発信する）を引数にincrement,decrementをキーにincrement,decrement関数を返す
 const mapDispatchToProps = dispatch =>( {
