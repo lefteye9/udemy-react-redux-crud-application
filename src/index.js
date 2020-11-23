@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore} from 'redux'
 import { Provider} from 'react-redux'
-import reducer from '/reducers'
+import reducer from './reducers'
 
 import './index.css';
 import App from './components/App';
-import App2 from './components/App';
+// import App2 from './components/App';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -21,7 +21,7 @@ ReactDOM.render(
   <React.StrictMode>
     {/* //providerコンポーネントでラップした後、storeにあるstateを渡す。 */}
     <Provider store={store}>
-    <App2 />
+    <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

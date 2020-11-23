@@ -1,4 +1,4 @@
-import {IMCREMENT,DECREMENT} from '../actions';
+import{INCREMENT,DECREMENT} from '../actions';
 // import reducers from '../reducers';
 
 const initialState = {value: 0};

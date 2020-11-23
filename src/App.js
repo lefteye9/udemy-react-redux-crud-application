@@ -1,43 +1,62 @@
 import React,{ Component } from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux'
+import {increment,decrement} from '../actions'
 
 
-const App2 = () => (<Counter></Counter>)
-
-class Counter extends Component {
-  constructor(props){
-    super(props)
-    console.log(this.state);
-    this.state = {count: 0}
-  }
-
-  hundlePlusButton = () => {
-    console.log("hundlePlusButton")
-    console.log(this.state.count);
-    // const currentCount = this.state.count;
-    this.setState(
-      // {count: currentCount +1}
-      {count: this.state.count +1}
-    )
-  }
-
-  hundleMinusButton = () => {
-    console.log('Minus');
-    this.setState({count: this.state.count -1})
-  }
-
-
-
+class App extends Component {
   render(){
-    console.log(this.state);
+    const props = this.props
+
   return(
-  <React.Fragment>
-  <div>count:{this.state.count}</div>)
-  <button onClick={this.hundlePlusButton}>+1</button>
-  <button onClick={this.hundleMinusButton}>-1</button>
-  </React.Fragment>)
+    <React.Fragment>
+    <div>value: {props.value}</div>
+    <buttorn onClick={props.increment}>+1</buttorn>
+    <buttorn onClick={props.decrement}>-1</buttorn>
+    </React.Fragment>
+  )
   }
 }
+
+//stateを引数に変化した値を返す。
+const mapStateToProps = state =>({value: state.count.value})
+
+//dipatch（発信する）を引数にincrement,decrementをキーにincrement,decrement関数を返す
+const mapDispatchToProps = dispatch =>( {
+  increment: ()=> dispatch(increment()),
+  decrement: ()=> dispatch(decrement())
+} )
+
+//ショートハンド
+// const mapDispatchToProps = dispatch = ({increment,decrement})
+
+export default connect(mapStateToProps,mapDispatchToProps)(App)
+
+
+// const App2 = () => (<Counter></Counter>)
+
+// class Counter extends Component {
+//   constructor(props){
+//     super(props)
+//     console.log(this.state);
+//     this.state = {count: 0}
+//   }
+
+  // hundlePlusButton = () => {
+  //   console.log("hundlePlusButton")
+  //   console.log(this.state.count);
+  //   // const currentCount = this.state.count;
+  //   this.setState(
+  //     // {count: currentCount +1}
+  //     {count: this.state.count +1}
+  //   )
+  // }
+
+  // hundleMinusButton = () => {
+  //   console.log('Minus');
+  //   this.setState({count: this.state.count -1})
+  // }
+?
 
 // const App2 = () => {
 //   return(
@@ -109,7 +128,7 @@ class Counter extends Component {
 //   }
 // }
 
-export default App2;
+export default App;
 
 
 // const App = () => {
